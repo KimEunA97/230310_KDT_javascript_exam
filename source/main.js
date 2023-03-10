@@ -1,23 +1,18 @@
+const root = document.getElementById('root');
 
+console.dir(root.children);
 
+memberArray = [];
+for (key in member) {
 
-function teamNameCreater() {
+  memberArray.push(key);
 
-  let Allmember = _EXAMDATA.teamInformation.teamAllMember;
-  console.log(Allmember);
+}
 
-
-
-  for (let i = 0; i < Allmember.length; i++) {
-
-    let teamMate = Allmember[i].name;
-    root.append(teamMate);
-
-  }
-
-
-  return teamMate;
+for (let i = 0; i < memberArray.length; i++) {
 
 
 }
+console.log(member);
+
 
