@@ -50,31 +50,6 @@ for (let i = 0; i < Allmember.length; i++) {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-//멤버 박스 만들고 안에 인포 넣기
-for (let i = 0; i < infoArray.length; i++) {
-
-  for (let i = 0; i < memberBox.length; i++) {
-
-    const memberInfo = tagMaker("div");
-    memberBox[i].append(memberInfo);
-
-  }
-
-}
-
-
-
 if (memberName.length > 0) {
 
   memberName.forEach(function (child) {
