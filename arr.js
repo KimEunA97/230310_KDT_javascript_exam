@@ -29,7 +29,6 @@ for (key in Allmember) {
 
 //이름
 const rootChild = root.children[0];
-console.log(rootChild);
 
 infoArray = [memberName, memberGit, memberPosit];
 
@@ -48,6 +47,7 @@ for (let i = 0; i < Allmember.length; i++) {
   }
 
 }
+console.dir(root.children[0])
 
 
 if (memberName.length > 0) {
@@ -57,13 +57,12 @@ if (memberName.length > 0) {
     if (typeof (child) === "string") {
 
       child = document.createTextNode(child);
-
-
     }
 
     for (let i = memberName.length; i > 0;) {
 
-      memberTag.append(child)
+      let j = 0;
+      root.children[i].appendChild(child)
     }
 
   })
