@@ -31,8 +31,13 @@ infoArray = [memberName, memberGit, memberPosit];
 
 // title 생성
 const title = tagMaker("div");
-root.append(title)
+root.append(title);
 
+
+for (let i = 0; i < 3; i++) {
+  const div = tagMaker("div");
+  root.children[0].append(div);
+}
 
 // 타이틀 다음 생성
 for (let i = 0; i < Allmember.length; i++) {
@@ -52,12 +57,12 @@ for (let i = 0; i < Allmember.length; i++) {
 
 
 
-title.style.backgroundColor = "black"
 title.style.display = "flex"
-title.style.flexDirection = "column"
+title.style.backgroundColor = "black"
+title.style.flexDirection = "row"
 
-title.style.justifyContent = "center";
-title.style.alignContent = "center";
+title.style.justifyContent = "space-evenly";
+title.style.alignItems = "center";
 title.style.textAlign = "center";
 title.style.fontSize = "100px"
 title.style.fontWeight = "bold"
@@ -65,13 +70,27 @@ title.style.fontWeight = "bold"
 title.style.width = "100vw"
 title.style.height = "100vh"
 title.style.color = "white"
-
-title.textContent = _EXAMDATA.teamInformation.teamName;
-
+title.style.flexWrap = "wrap";
 
 
 
-// children 1번부터 멤버 박스 
+title.children[1].textContent = _EXAMDATA.teamInformation.teamName;
+
+title.children[0].style.width = "50px"
+title.children[0].style.height = "50px"
+title.children[0].style.backgroundColor = "white"
+
+title.children[2].style.width = "50px"
+title.children[2].style.height = "50px"
+title.children[2].style.backgroundColor = "white"
+
+const leftBtn = title.children[0];
+const rightBtn = title.children[2];
+
+
+
+
+// children 1번부터 멤버 박스
 for (let i = 1; i < 5; i++) {
 
   root.children[i].style.display = "flex"
@@ -86,9 +105,13 @@ for (let i = 1; i < 5; i++) {
   root.children[i].style.fontWeight = "bold"
   root.children[i].style.color = "white"
 
+  root.children[i].style.zIndex = i;
+
+
   root.children[i].children[0].textContent = memberName[i]
   root.children[i].children[1].textContent = memberPosit[i]
   root.children[i].children[2].textContent = memberGit[i]
+
 
 
 }
@@ -122,10 +145,34 @@ root.children[4].style.backgroundColor = "red"
 root.children[5].style.backgroundColor = "green"
 
 
-root.children[i].addEventListener('click', function () {
 
-  root.children[i].setAttribute('display','none');
-  i++
+
+
+rightBtn.addEventListener('click', function () {
+
+  root.children[0].children[1].setAttribute('style', 'display : none')
+  let index = 1;
+  if (index == 1) {
+    root.children[1].setAttribute('style', 'display : flex')
+    index++
+
+  }
+  if (index == 2) {
+    root.children[2].setAttribute('style', 'display : flex')
+    index++
+
+
+  }
+  if (index == 3) {
+    root.children[3].setAttribute('style', 'display : flex')
+    index++
+
+
+  } if (index == 4) {
+    root.children[4].setAttribute('style', 'display : flex')
+    index++
+
+  }
 
 })
 
