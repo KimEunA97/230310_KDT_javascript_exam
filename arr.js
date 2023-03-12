@@ -59,6 +59,28 @@ root.children[3].children[0].textContent = memberName[3]
 root.children[4].children[0].textContent = memberName[4]
 
 
+root.children[0].children[1].textContent = memberPosit[0]
+root.children[1].children[1].textContent = memberPosit[1]
+root.children[2].children[1].textContent = memberPosit[2]
+root.children[3].children[1].textContent = memberPosit[3]
+root.children[4].children[1].textContent = memberPosit[4]
+
+
+root.children[0].children[2].textContent = memberGit[0]
+root.children[1].children[2].textContent = memberGit[1]
+root.children[2].children[2].textContent = memberGit[2]
+root.children[3].children[2].textContent = memberGit[3]
+root.children[4].children[2].textContent = memberGit[4]
+
+
+
+
+
+
+
+
+
+
 
 // console.log(memberName)
 
