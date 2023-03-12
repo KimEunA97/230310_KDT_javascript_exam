@@ -25,25 +25,40 @@ for (key in Allmember) {
 
 }
 
-for (let i = 0; i < Allmember.length; i++) {
-  const div = tagMaker('div');
-  root.append(div);
 
-}
 
 //이름
 const rootChild = root.children[0];
-for (let i = 0; i < Allmember.length; i++) {
+console.log(rootChild);
 
-  let memberTag = tagMaker("span");
-  rootChild.append(memberTag);
+infoArray = [memberName, memberGit, memberPosit];
+
+
+for (let i = 0; i < Allmember.length; i++) {
+  //멤버 수만큼 박스 만들고
+  let memberBox = tagMaker("span");
+  root.append(memberBox);
+
+  // 멤버 수 안에 정보 3개 박스
+  for (let i = 0; i < infoArray.length; i++) {
+
+    let memberInfoBox = tagMaker("div");
+    memberBox[i].append(memberInfoBox)
+
+  }
 
 }
 
-console.log(memberTag)
 
-infoArray = [memberName, memberGit, memberPosit];
-console.dir(memberBox[0].children);
+
+
+
+
+
+
+
+
+
 
 
 //멤버 박스 만들고 안에 인포 넣기
