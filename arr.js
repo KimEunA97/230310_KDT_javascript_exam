@@ -99,33 +99,25 @@ rightBtn.style.right = "20px"
 
 
 // children 1번부터 멤버 박스
-function styling() {
+for (let i = 1; i < 5; i++) {
 
-  for (let i = 1; i < 5; i++) {
+  root.children[i].style.display = "none"
+  root.children[i].style.flexDirection = "column";
+  root.children[i].style.justifyContent = "center";
+  root.children[i].style.alignContent = "center";
 
-    root.children[i].style.display = "none"
-    root.children[i].style.flexDirection = "column";
-    root.children[i].style.justifyContent = "center";
-    root.children[i].style.alignContent = "center";
+  root.children[i].style.width = "100%"
+  root.children[i].style.height = "100%"
 
-    root.children[i].style.width = "100%"
-    root.children[i].style.height = "100%"
+  root.children[i].style.fontSize = "80px"
+  root.children[i].style.fontWeight = "bold"
+  root.children[i].style.color = "white"
 
-    root.children[i].style.fontSize = "80px"
-    root.children[i].style.fontWeight = "bold"
-    root.children[i].style.color = "white"
-
-    root.children[i].style.zIndex = i;
-
-
-    root.children[i].children[0].textContent = memberName[i]
-    root.children[i].children[1].textContent = memberPosit[i]
-    root.children[i].children[2].textContent = memberGit[i]
-
-  }
+  root.children[i].children[0].textContent = memberName[i]
+  root.children[i].children[1].textContent = memberPosit[i]
+  root.children[i].children[2].textContent = memberGit[i]
 
 }
-styling();
 
 
 root.style.display = "flex";
@@ -151,7 +143,7 @@ root.children[4].style.backgroundColor = "red"
 root.children[5].style.backgroundColor = "green"
 
 
-function btnClick() {
+function clickIndex() {
 
   let index = 0;
 
@@ -159,27 +151,26 @@ function btnClick() {
 
     index += 1;
     console.log(index);
+    if (index === 7) {
+      index = 6;
+    }
     return index;
   })
 
   leftBtn.addEventListener('click', function () {
-
     index -= 1;
     console.log(index);
+
+    if (index === -1) {
+      index = 0;
+    }
     return index;
   })
 
 
-
-  if (index === 1) {
-
-    console.log("asd");
-
-  }
-
 }
 
-btnClick();
+clickIndex();
 
 
 // console.log(memberName)
