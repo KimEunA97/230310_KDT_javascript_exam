@@ -76,45 +76,57 @@ title.style.flexWrap = "wrap";
 
 title.children[1].textContent = _EXAMDATA.teamInformation.teamName;
 
-title.children[0].style.width = "50px"
-title.children[0].style.height = "50px"
-title.children[0].style.backgroundColor = "white"
-
-title.children[2].style.width = "50px"
-title.children[2].style.height = "50px"
-title.children[2].style.backgroundColor = "white"
 
 const leftBtn = title.children[0];
 const rightBtn = title.children[2];
+
+leftBtn.style.width = "50px"
+leftBtn.style.height = "50px"
+leftBtn.style.backgroundColor = "gray"
+leftBtn.style.position = "fixed"
+leftBtn.style.left = "20px"
+
+
+rightBtn.style.width = "50px"
+rightBtn.style.height = "50px"
+rightBtn.style.backgroundColor = "gray"
+rightBtn.style.position = "fixed"
+rightBtn.style.right = "20px"
+
+
 
 
 
 
 // children 1번부터 멤버 박스
-for (let i = 1; i < 5; i++) {
+function styling() {
 
-  root.children[i].style.display = "flex"
-  root.children[i].style.flexDirection = "column";
-  root.children[i].style.justifyContent = "center";
-  root.children[i].style.alignContent = "center";
+  for (let i = 1; i < 5; i++) {
 
-  root.children[i].style.width = "100%"
-  root.children[i].style.height = "100%"
+    root.children[i].style.display = "none"
+    root.children[i].style.flexDirection = "column";
+    root.children[i].style.justifyContent = "center";
+    root.children[i].style.alignContent = "center";
 
-  root.children[i].style.fontSize = "80px"
-  root.children[i].style.fontWeight = "bold"
-  root.children[i].style.color = "white"
+    root.children[i].style.width = "100%"
+    root.children[i].style.height = "100%"
 
-  root.children[i].style.zIndex = i;
+    root.children[i].style.fontSize = "80px"
+    root.children[i].style.fontWeight = "bold"
+    root.children[i].style.color = "white"
 
-
-  root.children[i].children[0].textContent = memberName[i]
-  root.children[i].children[1].textContent = memberPosit[i]
-  root.children[i].children[2].textContent = memberGit[i]
+    root.children[i].style.zIndex = i;
 
 
+    root.children[i].children[0].textContent = memberName[i]
+    root.children[i].children[1].textContent = memberPosit[i]
+    root.children[i].children[2].textContent = memberGit[i]
+
+  }
 
 }
+styling();
+
 
 root.style.display = "flex";
 root.style.flexDirection = "column";
@@ -130,12 +142,6 @@ console.dir(root.style)
 
 
 
-root.children[1].style.display = "none"
-root.children[2].style.display = "none"
-root.children[3].style.display = "none"
-root.children[4].style.display = "none"
-root.children[5].style.display = "none"
-
 
 
 root.children[1].style.backgroundColor = "cyan"
@@ -145,36 +151,35 @@ root.children[4].style.backgroundColor = "red"
 root.children[5].style.backgroundColor = "green"
 
 
+function btnClick() {
+
+  let index = 0;
+
+  rightBtn.addEventListener('click', function () {
+
+    index += 1;
+    console.log(index);
+    return index;
+  })
+
+  leftBtn.addEventListener('click', function () {
+
+    index -= 1;
+    console.log(index);
+    return index;
+  })
 
 
 
-rightBtn.addEventListener('click', function () {
+  if (index === 1) {
 
-  root.children[0].children[1].setAttribute('style', 'display : none')
-  let index = 1;
-  if (index == 1) {
-    root.children[1].setAttribute('style', 'display : flex')
-    index++
-
-  }
-  if (index == 2) {
-    root.children[2].setAttribute('style', 'display : flex')
-    index++
-
-
-  }
-  if (index == 3) {
-    root.children[3].setAttribute('style', 'display : flex')
-    index++
-
-
-  } if (index == 4) {
-    root.children[4].setAttribute('style', 'display : flex')
-    index++
+    console.log("asd");
 
   }
 
-})
+}
+
+btnClick();
 
 
 // console.log(memberName)
