@@ -10,10 +10,9 @@ function tagMaker(tagname) {
 }
 
 
-
 const Allmember = _EXAMDATA.teamInformation.teamAllMember;
 
-//멤버 문자열 배열에 담기
+//멤버별 정보 문자열 배열에 담기
 memberName = [];
 memberGit = [];
 memberPosit = [];
@@ -26,15 +25,22 @@ for (key in Allmember) {
 
 }
 
+for (let i = 0; i < Allmember.length; i++) {
+  const div = tagMaker('div');
+  root.append(div);
+
+}
+
 //이름
 const rootChild = root.children[0];
-for (let i = 0; i < memberArray.length; i++) {
+for (let i = 0; i < Allmember.length; i++) {
 
   let memberTag = tagMaker("span");
   rootChild.append(memberTag);
 
 }
 
+console.log(memberTag)
 
 infoArray = [memberName, memberGit, memberPosit];
 console.dir(memberBox[0].children);
@@ -67,7 +73,7 @@ if (memberName.length > 0) {
 
     for (let i = memberName.length; i > 0;) {
 
-      .append(child)
+      memberTag.append(child)
     }
 
   })
@@ -76,60 +82,3 @@ if (memberName.length > 0) {
 
 
 
-
-
-
-
-// function predicate(key, value){
-
-//   return item => item[key] === value;
-// }
-
-// let cc = predicate(Allmember,name)
-// console.log(cc)
-
-
-// console.log(Allmember[0].name);
-// console.log(Allmember[1].name);
-// console.log(Allmember[2].name);
-// console.log(Allmember[3].name);
-// console.log(Allmember[4].name);
-
-// let NAME = Allmember.filter(Allmember=>Allmember===Allmember.name)
-
-
-// class namesPush {
-
-//   AllmemberNameArray = [];
-
-//   multiply(arr) {
-
-//     arr.forEach(function (item) {
-
-//       this.AllmemberNameArray.push(item);
-//     }, this);
-//   }
-// }
-
-// const names = new namesPush();
-// names.multiply(Allmember);
-// console.log(names)
-
-
-
-
-// Allmember.forEach((memberName, memberPosit, memberGit) => {
-
-//   console.log()
-
-// })
-
-
-
-
-
-for (let i = 0; i < Allmember.length; i++) {
-  const div = tagMaker('div');
-  root.append(div);
-
-}
