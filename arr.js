@@ -47,27 +47,53 @@ for (let i = 0; i < Allmember.length; i++) {
   }
 
 }
-console.dir(root.children[0])
 
 
-if (memberName.length > 0) {
+console.log(infoArray)
 
-  memberName.forEach(function (child) {
 
-    if (typeof (child) === "string") {
+root.children[0].children[0].textContent = memberName[0]
+root.children[1].children[0].textContent = memberName[1]
+root.children[2].children[0].textContent = memberName[2]
+root.children[3].children[0].textContent = memberName[3]
+root.children[4].children[0].textContent = memberName[4]
 
-      child = document.createTextNode(child);
-    }
 
-    for (let i = memberName.length; i > 0;) {
 
-      let j = 0;
-      root.children[i].appendChild(child)
-    }
+// console.log(memberName)
 
-  })
+// if (memberName.length > 0) {
 
-}
+//   memberName.forEach(function (child) {
 
+//     if (typeof (child) === "string") {
+
+//       child = document.createTextNode(child);
+//       console.dir(child);
+
+//       if (child.data === "박수연") {
+
+//         root.children[0].children[0].append(child);
+
+//       }
+
+//       if (child.data === "박수연") {
+
+//         root.children[0].children[0].append(child);
+
+//       }
+//       if (child.data === "박수연") {
+
+//         root.children[0].children[0].append(child);
+
+//       }
+//       if (child.data === "박수연") {
+
+//         root.children[0].children[0].append(child);
+
+//       }
+//     }
+//   })
+// }
 
 
