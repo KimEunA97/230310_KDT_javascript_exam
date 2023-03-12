@@ -39,11 +39,11 @@ for (let i = 0; i < Allmember.length; i++) {
   let memberBox = tagMaker("span");
   root.append(memberBox);
 
-  // 멤버 수 안에 정보 3개 박스
+  // 멤버 수 안에 정보 박스 3개
   for (let i = 0; i < infoArray.length; i++) {
 
     let memberInfoBox = tagMaker("div");
-    memberBox[i].append(memberInfoBox)
+    memberBox.append(memberInfoBox);
 
   }
 
