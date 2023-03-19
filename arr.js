@@ -29,17 +29,17 @@ const rootChild = root.children[0];
 
 infoArray = [memberName, memberGit, memberPosit];
 
-// title 생성
+// title 생성. +버튼까지
 const title = tagMaker("div");
 root.append(title);
-
 
 for (let i = 0; i < 3; i++) {
   const div = tagMaker("div");
   root.children[0].append(div);
 }
 
-// 타이틀 다음 생성
+
+// 타이틀 다음에 올 박스들 생성
 for (let i = 0; i < Allmember.length; i++) {
   //멤버 수만큼 박스 만들고
   let memberBox = tagMaker("span");
@@ -56,7 +56,7 @@ for (let i = 0; i < Allmember.length; i++) {
 }
 
 
-
+//제일 처음 타이틀 스타일
 title.style.display = "flex"
 title.style.backgroundColor = "black"
 title.style.flexDirection = "row"
@@ -73,10 +73,11 @@ title.style.color = "white"
 title.style.flexWrap = "wrap";
 
 
-
+// 타이틀에 들어가는 텍스트
 title.children[1].textContent = _EXAMDATA.teamInformation.teamName;
 
 
+//버튼
 const leftBtn = title.children[0];
 const rightBtn = title.children[2];
 
@@ -98,7 +99,7 @@ rightBtn.style.right = "20px"
 
 
 
-// children 1번부터 멤버 박스
+// children 1번부터가 내용. 멤버 박스까지 스타일링
 for (let i = 1; i < 5; i++) {
 
   root.children[i].style.display = "none"
@@ -120,6 +121,8 @@ for (let i = 1; i < 5; i++) {
 }
 
 
+
+
 root.style.display = "flex";
 root.style.flexDirection = "column";
 root.style.width = "100vw"
@@ -130,11 +133,8 @@ root.style.justifyContent = "center";
 
 
 
-console.dir(root.style)
 
-
-
-
+//배경색
 
 root.children[1].style.backgroundColor = "cyan"
 root.children[2].style.backgroundColor = "blue"
@@ -143,70 +143,33 @@ root.children[4].style.backgroundColor = "red"
 root.children[5].style.backgroundColor = "green"
 
 
-function clickIndex() {
 
-  let index = 0;
+let index = 0;
 
-  rightBtn.addEventListener('click', function () {
+leftBtn.addEventListener('click', function () {
+  index -= 1;
+  console.log(index);
 
-    index += 1;
-    console.log(index);
-    if (index === 7) {
-      index = 6;
-    }
-    return index;
-  })
+  if (index === -1) {
+    index = 0;
+  }
 
-  leftBtn.addEventListener('click', function () {
-    index -= 1;
-    console.log(index);
+  root.children[index + 1].style.display = 'none';
+  root.children[index].style.display = 'flex';
 
-    if (index === -1) {
-      index = 0;
-    }
-    return index;
-  })
+})
 
+rightBtn.addEventListener('click', function () {
 
-}
+  index += 1;
+  console.log(index);
+  if (index === 7) {
+    index = 6;
+  }
 
-clickIndex();
+  root.children[index - 1].style.display = 'none';
+  root.children[index].style.display = 'flex';
 
 
-// console.log(memberName)
-
-// if (memberName.length > 0) {
-
-//   memberName.forEach(function (child) {
-
-//     if (typeof (child) === "string") {
-
-//       child = document.createTextNode(child);
-//       console.dir(child);
-
-//       if (child.data === "박수연") {
-
-//         root.children[0].children[0].append(child);
-
-//       }
-
-//       if (child.data === "박수연") {
-
-//         root.children[0].children[0].append(child);
-
-//       }
-//       if (child.data === "박수연") {
-
-//         root.children[0].children[0].append(child);
-
-//       }
-//       if (child.data === "박수연") {
-
-//         root.children[0].children[0].append(child);
-
-//       }
-//     }
-//   })
-// }
-
+})
 
