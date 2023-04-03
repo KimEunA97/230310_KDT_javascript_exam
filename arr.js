@@ -78,21 +78,26 @@ title.children[1].textContent = _EXAMDATA.teamInformation.teamName;
 
 
 //버튼
-const leftBtn = title.children[0];
-const rightBtn = title.children[2];
+
+const leftBtn = root.children[5].children[0];
+const rightBtn = root.children[5].children[2]
+// leftBtn.style.position = "fixed";
 
 leftBtn.style.width = "50px"
 leftBtn.style.height = "50px"
 leftBtn.style.backgroundColor = "gray"
 leftBtn.style.position = "fixed"
-leftBtn.style.left = "20px"
+leftBtn.style.top = "50%"
+leftBtn.style.left = "1%"
+
 
 
 rightBtn.style.width = "50px"
 rightBtn.style.height = "50px"
 rightBtn.style.backgroundColor = "gray"
 rightBtn.style.position = "fixed"
-rightBtn.style.right = "20px"
+rightBtn.style.top = "50%"
+rightBtn.style.right = "1%"
 
 
 
@@ -114,11 +119,20 @@ for (let i = 1; i < 5; i++) {
   root.children[i].style.fontWeight = "bold"
   root.children[i].style.color = "white"
 
-  root.children[i].children[0].textContent = memberName[i]
-  root.children[i].children[1].textContent = memberPosit[i]
-  root.children[i].children[2].textContent = memberGit[i]
+  root.children[i].children[0].textContent = memberName[i];
+  root.children[i].children[1].textContent = memberPosit[i];
+  root.children[i].children[2].textContent = memberGit[i];
 
 }
+
+
+let Btndiv = tagMaker("div");
+root.nextElementSibling(Btndiv);
+
+// for (let i = 0; i < 5; i++) {
+
+// }
+
 
 
 
@@ -136,10 +150,10 @@ root.style.justifyContent = "center";
 
 //배경색
 
-root.children[1].style.backgroundColor = "cyan"
-root.children[2].style.backgroundColor = "blue"
-root.children[3].style.backgroundColor = "yellow"
-root.children[4].style.backgroundColor = "red"
+root.children[1].style.backgroundColor = "#ff0099"
+root.children[2].style.backgroundColor = "#CCCCFF"
+root.children[3].style.backgroundColor = "#99ccff"
+root.children[4].style.backgroundColor = "#99cc00"
 root.children[5].style.backgroundColor = "green"
 
 
@@ -152,6 +166,7 @@ leftBtn.addEventListener('click', function () {
 
   if (index === -1) {
     index = 0;
+
   }
 
   root.children[index + 1].style.display = 'none';
@@ -165,11 +180,11 @@ rightBtn.addEventListener('click', function () {
   console.log(index);
   if (index === 7) {
     index = 6;
+
   }
 
   root.children[index - 1].style.display = 'none';
   root.children[index].style.display = 'flex';
-
 
 })
 
